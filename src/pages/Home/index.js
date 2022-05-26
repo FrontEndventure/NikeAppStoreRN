@@ -5,6 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  ToastAndroid,
 } from 'react-native';
 import React, {useState} from 'react';
 import {AddItem, Carousel1, ICShoppingCart, Item1} from '../../assets';
@@ -17,7 +18,7 @@ const Home = () => {
   const incrementCount = () => {
     // Update state with incremented value
     setCount(count + 1);
-
+    ToastAndroid.show(`${count} Nike Vapormax  Added!`, ToastAndroid.SHORT);
     console.log('ini dihitung', count);
   };
   return (

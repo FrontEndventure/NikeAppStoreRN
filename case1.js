@@ -63,7 +63,19 @@ var rawdata = fruits.map(type => {
   return type.fruitType;
 });
 var unique = rawdata.filter(onlyUnique);
-console.log('Tipe buah dimiliki andi adalah: ', unique);
+console.log('Banyak wadah berdasarkan tipe buah: ', unique.length);
+
+const groupBy = (key, arr) =>
+  arr.reduce(
+    (cache, product) => ({
+      ...cache,
+      [product[key]]:
+        product[key] in cache ? cache[product[key]].concat(product) : [product],
+    }),
+    {},
+  );
+
+console.log('Tipe buah dimiliki andi adalah: ', groupBy('fruitType', fruits));
 
 function getArraySum(a) {
   var total = 0;

@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {colors} from '../../../utils';
+import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
+
 import {TabItem} from '../../atoms';
 
 const BottomNavigator = ({state, descriptors, navigation}) => {
@@ -38,6 +38,16 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
         };
 
         return (
+          // <TouchableOpacity
+          //   accessibilityRole="button"
+          //   accessibilityState={isFocused ? {selected: true} : {}}
+          //   accessibilityLabel={options.tabBarAccessibilityLabel}
+          //   testID={options.tabBarTestID}
+          //   onPress={onPress}
+          //   onLongPress={onLongPress}
+          //   style={{flex: 1}}>
+          //   <Text style={{color: isFocused ? '#673ab7' : '#222'}}>{label}</Text>
+          // </TouchableOpacity>
           <TabItem
             key={index}
             title={label}
@@ -56,7 +66,7 @@ export default BottomNavigator;
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'yellow',
     flexDirection: 'row',
     paddingHorizontal: 53,
     paddingVertical: 12,

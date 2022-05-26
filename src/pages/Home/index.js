@@ -1,8 +1,25 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 import {AddItem, Carousel1, ICShoppingCart, Item1} from '../../assets';
 
 const Home = () => {
+  // State to store count value
+  const [count, setCount] = useState(0);
+
+  // Function to increment count by 1
+  const incrementCount = () => {
+    // Update state with incremented value
+    setCount(count + 1);
+
+    console.log('ini dihitung', count);
+  };
   return (
     <View
       style={{
@@ -21,7 +38,23 @@ const Home = () => {
             marginTop: 15,
           }}>
           <Text>Burger</Text>
-          <Image source={ICShoppingCart} style={{height: 30, width: 30}} />
+          <View style={{borderWidth: 2}}>
+            {count > 0 && (
+              <View
+                style={{
+                  backgroundColor: 'red',
+                  width: 20,
+                  alignItems: 'center',
+                  position: 'absolute',
+                  left: 25,
+                  borderRadius: 20 / 2,
+                }}>
+                <Text>{count}</Text>
+              </View>
+            )}
+
+            <Image source={ICShoppingCart} style={{height: 30, width: 30}} />
+          </View>
           {/* <Text>add to cart</Text> */}
         </View>
         <Text style={{fontSize: 20, fontWeight: 'bold', marginVertical: 20}}>
@@ -64,7 +97,12 @@ const Home = () => {
                 paddingHorizontal: 5,
               }}>
               {/* <Text>icon</Text> */}
-              <Image source={AddItem} style={{height: 25, width: 25}} />
+              <TouchableOpacity
+                onPress={() => {
+                  incrementCount();
+                }}>
+                <Image source={AddItem} style={{height: 25, width: 25}} />
+              </TouchableOpacity>
 
               <Text style={{marginLeft: 10}}>Nike Vapormax</Text>
             </View>

@@ -1,12 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   ICFavoriteActive,
   ICFavoriteInActive,
+  ICHome,
   ICHomeActive,
   ICHomeInActive,
   ICPersonActive,
   ICPersonInActive,
+  ICShoppingCart,
 } from '../../../assets';
 
 const TabItem = ({title, active, onPress, onLongPress}) => {
@@ -20,7 +22,7 @@ const TabItem = ({title, active, onPress, onLongPress}) => {
     if (title === 'Profile') {
       return active ? <ICPersonActive /> : <ICPersonInActive />;
     }
-    return <ICHomeActive />;
+    return <ICHome />;
   };
   return (
     <TouchableOpacity
@@ -42,6 +44,6 @@ const styles = StyleSheet.create({
   text: active => ({
     fontSize: 10,
     marginTop: 4,
-    color: active ? 'black' : 'white',
+    color: active ? '#673ab7' : '#222',
   }),
 });

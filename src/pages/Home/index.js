@@ -18,7 +18,7 @@ const Home = () => {
   const incrementCount = () => {
     // Update state with incremented value
     setCount(count + 1);
-    ToastAndroid.show(`${count} Nike Vapormax  Added!`, ToastAndroid.SHORT);
+    ToastAndroid.show(`${count + 1} Nike Vapormax  Added!`, ToastAndroid.SHORT);
     console.log('ini dihitung', count);
   };
   return (

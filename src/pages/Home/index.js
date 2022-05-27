@@ -9,16 +9,19 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {AddItem, Carousel1, ICShoppingCart, Item1} from '../../assets';
+import {ProductItem} from '../../components/molecules';
 
 const Home = () => {
   // State to store count value
   const [count, setCount] = useState(0);
+  const [title, Settitle] = useState('');
 
   // Function to increment count by 1
   const incrementCount = () => {
     // Update state with incremented value
     setCount(count + 1);
     ToastAndroid.show(`${count + 1} Nike Vapormax  Added!`, ToastAndroid.SHORT);
+
     console.log('ini dihitung', count);
   };
   return (
@@ -73,42 +76,8 @@ const Home = () => {
             </View>
           </ScrollView>
         </View>
-        <View style={{flexDirection: 'row', marginTop: 70}}>
-          <View
-            style={{
-              marginVertical: 50,
-              borderColor: 'red',
-              borderWidth: 1,
-              height: 220,
-              width: 150,
-              borderRadius: 10,
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}>
-            <Image source={Item1} style={{height: 170, width: 120}} />
-            <View
-              style={{
-                flexDirection: 'row',
-                backgroundColor: 'red',
-                height: 35,
-                width: '100%',
-                borderBottomLeftRadius: 10,
-                borderBottomRightRadius: 10,
-                alignItems: 'center',
-                paddingHorizontal: 5,
-              }}>
-              {/* <Text>icon</Text> */}
-              <TouchableOpacity
-                onPress={() => {
-                  incrementCount();
-                }}>
-                <Image source={AddItem} style={{height: 25, width: 25}} />
-              </TouchableOpacity>
 
-              <Text style={{marginLeft: 10}}>Nike Vapormax</Text>
-            </View>
-          </View>
-        </View>
+        <ProductItem title="Nike Product" onPress={incrementCount} />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Text>Home</Text>

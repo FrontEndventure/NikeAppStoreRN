@@ -19,6 +19,8 @@ const Home = () => {
   // Function to increment count by 1
   const incrementCount = () => {
     // Update state with incremented value
+    // Settitle(title);
+    // console.log('ini nama:', name);
     setCount(count + 1);
     ToastAndroid.show(`${count + 1} Nike Vapormax  Added!`, ToastAndroid.SHORT);
 
@@ -77,13 +79,24 @@ const Home = () => {
           </ScrollView>
         </View>
 
-        <ProductItem title="Nike Product" onPress={incrementCount} />
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{flexDirection: 'row', marginHorizontal:-20}}>
+          <ProductItem name="Nike Product" onPress={incrementCount} />
+          <View style={{marginHorizontal: 10}}></View>
+          <ProductItem name="Adidas Limited Edition" onPress={incrementCount} />
+          <View style={{marginHorizontal: 10}}></View>
+          <ProductItem name="Adidas Limited Edition" onPress={incrementCount} />
+          <View style={{marginHorizontal: 10}}></View>
+          <ProductItem name="Adidas Limited Edition" onPress={incrementCount} />
+        </ScrollView>
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      {/* <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Text>Home</Text>
         <Text>whistlist</Text>
         <Text>Profile</Text>
-      </View>
+      </View> */}
     </View>
   );
 };

@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import {AddItem, Item1} from '../../../assets';
 
-const ProductItem = ({onPress, title}) => {
+const ProductItem = ({onPress, name}) => {
   return (
     <View style={{flexDirection: 'row', marginTop: 70}}>
       <View
@@ -33,7 +33,7 @@ const ProductItem = ({onPress, title}) => {
             <Image source={AddItem} style={{height: 25, width: 25}} />
           </TouchableOpacity>
 
-          <Text style={{marginLeft: 10}}>{title}</Text>
+          <Text style={{marginLeft: 10}}>{name}</Text>
         </View>
       </View>
     </View>
